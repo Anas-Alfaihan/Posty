@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posty</title>
+</head>
+<body>
+    <header>
+        <div>
+            Posty
+        </div>
+        <nav>
+            <a href="#">New</a>
+        </nav>
+    </header>
+
+    <main>
+        {% for post in posts %}
+        <article class="post">
+            <img src="{{post.photo_url}}" height="250px" class="profile_photo">
+            <div class="name">{{post.name}}</div>
+            <p class="content">{{post.body}}</p>
+            <div class="btn">
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a>
+            </div>
+        </article>
+        {% endfor %}
+    
+        
+    </main>
+    
+</body>
+</html>
