@@ -22,7 +22,7 @@
             <div class="name">{{post.name}}</div>
             <p class="content">{{post.body}}</p>
             <div class="btn">
-                <a href="#">Edit</a> |
+                <a href="{{ url_for('post_update', id = post.id) }}">Edit</a> |
                 <a href="{{ url_for('post_delete', id=post.id) }}">Delete</a>
             </div>
         </article>
