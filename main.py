@@ -36,7 +36,6 @@ def post_add():
         post_store.add(new_post)
         app.current_id += 1
         return redirect(url_for('home'))
-    
     elif request.method == 'GET':
         return render_template('post-add.html')
 
@@ -45,7 +44,7 @@ def post_delete(id):
     post_store.delete(id)
     return redirect(url_for('home'))
 
-    @app.route('/posts/update/<int:id>', methods = ['GET', 'POST'])
+@app.route('/posts/update/<int:id>', methods = ['GET', 'POST'])
 def post_update(id):
     if request.method == 'POST':
         update_fields = {
@@ -60,4 +59,3 @@ def post_update(id):
         post = post_store.get_by_id(id)
         return render_template('post-update.html', post = post)
 
-app.run()
